@@ -1,5 +1,8 @@
+import 'package:arquivmed/exam.dart';
 import 'package:arquivmed/home.dart';
 import 'package:flutter/material.dart';
+
+import 'my_qr_code.dart';
 
 void main() {
   runApp(ArquivmedApp());
@@ -26,9 +29,18 @@ class ArquivmedApp extends StatelessWidget {
         }),
         visualDensity: VisualDensity.adaptivePlatformDensity,
         primaryIconTheme: IconThemeData(color: Colors.white),
+        inputDecorationTheme: const InputDecorationTheme(
+          labelStyle: TextStyle(color: Colors.white),
+          hintStyle: TextStyle(color: Colors.white),
+        ),
         fontFamily: 'Montserrat',
       ),
-      home: HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+        '/doctor/exam-list': (context) => ExamPage(),
+        '/profile/my-qrcode': (context) => MyQrCodePage(),
+      },
     );
   }
 }

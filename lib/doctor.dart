@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DoctorPage extends StatelessWidget {
   // Full dimensions of an action
@@ -18,15 +19,17 @@ class DoctorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return Container(
+      color: Colors.white,
       child: Column(
         children: [
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Image(
-                width: 158.64,
-                height: 42.35,
-                image: AssetImage('assets/images/logo.png')),
+              width: 158.64,
+              height: 42.35,
+              image: AssetImage('assets/images/logo.png'),
+            ),
           ),
           Container(
             margin: EdgeInsets.symmetric(vertical: 2.0),
@@ -35,11 +38,12 @@ class DoctorPage extends StatelessWidget {
             child: Stack(
               children: [
                 CircleAvatar(
-                    radius: 80,
-                    backgroundColor: Colors.white,
-                    backgroundImage: NetworkImage(
-                      'https://www.miraldental.com/wp-content/uploads/2018/12/doctor-img2.png',
-                    )),
+                  radius: 80,
+                  backgroundColor: Colors.white,
+                  backgroundImage: NetworkImage(
+                    'https://www.miraldental.com/wp-content/uploads/2018/12/doctor-img2.png',
+                  ),
+                ),
                 Positioned(
                   bottom: 0,
                   left: 90,
@@ -81,17 +85,209 @@ class DoctorPage extends StatelessWidget {
                     Tab(text: "PA"),
                   ],
                 ),
-                // Container(
-                //   height: 100,
-                //   child: TabBarView(
-                //     children: [
-                //       Icon(Icons.directions_car),
-                //       Icon(Icons.directions_transit),
-                //       Icon(Icons.directions_bike),
-                //       Icon(Icons.directions_bike),
-                //     ],
-                //   ),
-                // )
+                Container(
+                  child: ListView(
+                    shrinkWrap: true,
+                    children: [
+                      Center(
+                        child: Text("Últimos Exames"),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/doctor/exam-list');
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                          child: Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    "08",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 26.0,
+                                        color: Theme.of(context).primaryColor),
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            margin: EdgeInsets.only(left: 15.0),
+                                            child: Icon(
+                                              FontAwesomeIcons.hospital,
+                                              color: Colors.grey,
+                                              size: 15,
+                                            ),
+                                          ),
+                                          Container(
+                                            margin: EdgeInsets.only(left: 10.0),
+                                            child: Text(
+                                              "Hospital Mãe de Deus",
+                                              style: TextStyle(fontSize: 12.0),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      SizedBox(height: 5),
+                                      Row(
+                                        children: [
+                                          Container(
+                                            margin: EdgeInsets.only(left: 15.0),
+                                            child: Icon(
+                                              FontAwesomeIcons.stethoscope,
+                                              color: Colors.grey,
+                                              size: 15,
+                                            ),
+                                          ),
+                                          Container(
+                                            margin: EdgeInsets.only(left: 10.0),
+                                            child: Text(
+                                              "Dr. João Pedro Pereira",
+                                              style: TextStyle(fontSize: 12.0),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      SizedBox(height: 10),
+                                      Row(
+                                        children: [
+                                          Container(
+                                            margin: EdgeInsets.only(left: 15.0),
+                                            child: Icon(
+                                              FontAwesomeIcons.calendarAlt,
+                                              color: Colors.grey,
+                                              size: 15,
+                                            ),
+                                          ),
+                                          Container(
+                                            margin: EdgeInsets.only(left: 10.0),
+                                            child: Text(
+                                              "23/02/2021 - 14:30",
+                                              style: TextStyle(fontSize: 10.0),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  Expanded(
+                                    child: Container(
+                                      alignment: AlignmentDirectional.centerEnd,
+                                      child: Icon(
+                                        Icons.keyboard_arrow_right_sharp,
+                                        color: Theme.of(context).primaryColor,
+                                        size: 50,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: Card(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "07",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 26.0,
+                                      color: Theme.of(context).primaryColor),
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(left: 15.0),
+                                          child: Icon(
+                                            FontAwesomeIcons.hospital,
+                                            color: Colors.grey,
+                                            size: 15,
+                                          ),
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(left: 10.0),
+                                          child: Text(
+                                            "Hospital Moinhos de Vento",
+                                            style: TextStyle(fontSize: 12.0),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    SizedBox(height: 5),
+                                    Row(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(left: 15.0),
+                                          child: Icon(
+                                            FontAwesomeIcons.stethoscope,
+                                            color: Colors.grey,
+                                            size: 15,
+                                          ),
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(left: 10.0),
+                                          child: Text(
+                                            "Dr. Márcio Gomes",
+                                            style: TextStyle(fontSize: 12.0),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    SizedBox(height: 10),
+                                    Row(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(left: 15.0),
+                                          child: Icon(
+                                            FontAwesomeIcons.calendarAlt,
+                                            color: Colors.grey,
+                                            size: 15,
+                                          ),
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(left: 10.0),
+                                          child: Text(
+                                            "15/01/2021 - 10:20",
+                                            style: TextStyle(fontSize: 10.0),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                Expanded(
+                                  child: Container(
+                                    alignment: AlignmentDirectional.centerEnd,
+                                    child: Icon(
+                                      Icons.keyboard_arrow_right_sharp,
+                                      color: Theme.of(context).primaryColor,
+                                      size: 50,
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ),
