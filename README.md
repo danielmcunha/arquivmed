@@ -1,6 +1,6 @@
 # arquivmed
 
-A new Flutter project.
+Projeto para facilitar relação paciente médico
 
 ## Getting Started
 
